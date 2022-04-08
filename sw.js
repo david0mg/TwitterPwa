@@ -1,4 +1,4 @@
-importScripts('js/sw-acces.js');
+importScripts('js/sw-acces');
 
 const STATIC_CACHE = 'static-v4';
 const DYNAMIC_CACHE = 'dynamic-v2';
@@ -6,19 +6,17 @@ const INMUTABLE_CACHE = 'inmutable-v1';
 const APP_SHELL = [
 "index.html",
 "css/style.css",
-"images/icons/icon-128x128.png",
 "js/app.js",
 "js/sw-acces.js",
-"http://www.croop.cl/UI/twitter/images/doug.jpg",
-"http://www.croop.cl/UI/twitter/images/carl.jpg",
-"http://www.croop.cl/UI/twitter/images/russel.jpg",
-"http://www.croop.cl/UI/twitter/images/carl.jpg"
-
 ];
 const APP_SHELL_INMUTABLE = [
 "https://fonts.googleapis.com/css?family=Quicksand:300,400",
 "https://fonts.googleapis.com/css?family=Lato:400,300",
 "https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css",
+"http://www.croop.cl/UI/twitter/images/doug.jpg",
+"http://www.croop.cl/UI/twitter/images/carl.jpg",
+"http://www.croop.cl/UI/twitter/images/russel.jpg",
+"http://www.croop.cl/UI/twitter/images/carl.jpg",
 "css/animate.css",
 "js/jquery.js"
 ];
@@ -47,7 +45,7 @@ evento.waitUntil( respuesta );
 
 
 self.addEventListener( 'fetch', evento => {
-const respuesta = caches.match( e.request ).then( res => {
+const respuesta = caches.match( evento.request ).then( res => {
 
 if ( res ) {
 return res;
