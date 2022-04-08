@@ -8,6 +8,9 @@ const APP_SHELL = [
 "css/style.css",
 "js/app.js",
 "js/sw-acces.js",
+"images/avs/carl.jpg",
+"images/avs/doug.jpg",
+"images/avs/russel.jpg"
 ];
 const APP_SHELL_INMUTABLE = [
 "https://fonts.googleapis.com/css?family=Quicksand:300,400",
@@ -18,7 +21,7 @@ const APP_SHELL_INMUTABLE = [
 "http://www.croop.cl/UI/twitter/images/russel.jpg",
 "http://www.croop.cl/UI/twitter/images/carl.jpg",
 "css/animate.css",
-"js/jquery.js"
+"js/libs/jquery.js"
 ];
 
 self.addEventListener('install', evento => {
