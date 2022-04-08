@@ -8,18 +8,15 @@ const APP_SHELL = [
 "css/style.css",
 "js/app.js",
 "js/sw-acces.js",
-"images/avs/carl.jpg",
-"images/avs/doug.jpg",
-"images/avs/russel.jpg"
+"http://www.croop.cl/UI/twitter/images/doug.jpg",
+"http://www.croop.cl/UI/twitter/images/carl.jpg",
+"http://www.croop.cl/UI/twitter/images/russel.jpg",
+"http://www.croop.cl/UI/twitter/images/carl.jpg",
 ];
 const APP_SHELL_INMUTABLE = [
 "https://fonts.googleapis.com/css?family=Quicksand:300,400",
 "https://fonts.googleapis.com/css?family=Lato:400,300",
 "https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css",
-"http://www.croop.cl/UI/twitter/images/doug.jpg",
-"http://www.croop.cl/UI/twitter/images/carl.jpg",
-"http://www.croop.cl/UI/twitter/images/russel.jpg",
-"http://www.croop.cl/UI/twitter/images/carl.jpg",
 "css/animate.css",
 "js/libs/jquery.js"
 ];
@@ -49,26 +46,14 @@ evento.waitUntil( respuesta );
 
 self.addEventListener( 'fetch', evento => {
 const respuesta = caches.match( evento.request ).then( res => {
-
-if ( res ) {
-return res;
-} else {
-return fetch( evento.request ).then( newRes => {
-return actualizaCacheDinamico( DYNAMIC_CACHE, evento.request, newRes );
+    if ( res ) {
+        return res;
+    } else {
+        return fetch( evento.request ).then( newRes => {
+            return actualizaCacheDinamico( DYNAMIC_CACHE, evento.request, newRes );
+        });
+    }
 });
-
-
-
-}
-
-
-
-});
-
-
-
-
-
 evento.respondWith( respuesta );
 
 
