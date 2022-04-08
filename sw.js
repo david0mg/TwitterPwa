@@ -1,4 +1,4 @@
-importScripts('js/sw-acces');
+importScripts('js/sw-acces.js');
 
 const STATIC_CACHE = 'static-v4';
 const DYNAMIC_CACHE = 'dynamic-v2';
